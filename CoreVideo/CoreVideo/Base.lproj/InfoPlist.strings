@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  CoreVideo
+
+  Created by apple on 15/9/25.
+  Copyright (c) 2015年 yangyu   QQ：623240480. All rights reserved.
+*/
+"CFBundleDisplayName" = "行车记录仪";
+"CFBundleName"        = "行车记录仪";
+

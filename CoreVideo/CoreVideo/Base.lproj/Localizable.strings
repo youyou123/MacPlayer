@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  CoreVideo
+
+  Created by apple on 9/26/15.
+  Copyright (c) 2015 yangyu   QQ：623240480. All rights reserved.
+*/
+"setting"="设置";
+"filelist"="文件列表";
+"play"="播放";
+"pause"="暂停";
+"km_speedUnit"="KM/H";
+"mph_speedUnit"="MPH";
+"m_speedUnit"="米/小时";
+
+"mile_distanceUnit"="英里";
+"km_distanceUnit"="公里";
+"m_distanceUnit"="米";
+
+"reload"="加载";
+"capture_suc"="截图成功";
+"capture_fail"="无法截图";
+
+"zoomin_out"="缩放";
+
+"map_online"="地图在线";
+"map_offline"="地图离线,请检查网络";
