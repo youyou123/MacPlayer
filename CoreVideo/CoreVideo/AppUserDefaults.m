@@ -16,7 +16,7 @@ const NSString* MILEPH=@"mileph";
     
     NSString* speedUNIT=[[NSUserDefaults standardUserDefaults] objectForKey:@"speed_unit"];
     if(speedUNIT==nil){
-        [[NSUserDefaults standardUserDefaults] setObject:KMPH forKey:@"speed_unit"];
+        [[NSUserDefaults standardUserDefaults] setObject:MILEPH forKey:@"speed_unit"];
     }
     
     return speedUNIT;

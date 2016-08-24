@@ -61,6 +61,9 @@ NSString *shopsite=@"http://www.nextbaseshop.co.uk";
 //helpdialog
 //SETTING
 @property (weak) IBOutlet NSView *settingsDialog;
+@property (weak) IBOutlet NSMatrix *radioSpeed;
+@property (weak) IBOutlet NSMatrix *radioLanguage;
+@property (weak) IBOutlet NSMatrix *radioMap;
 
 //SETTING
 //Default image
@@ -149,6 +152,17 @@ NSString *shopsite=@"http://www.nextbaseshop.co.uk";
    
     //dialog help
     //settings
+    if([AppUserDefaults isKMPH]){
+        
+        [self.radioSpeed  setState:1 atRow:0 column:0];
+        [self.radioSpeed setState:0 atRow:0 column:1];
+        
+    }else{
+        
+        [self.radioSpeed setState:1 atRow:0 column:1];
+        [self.radioSpeed setState:0 atRow:0 column:0];
+        
+    }
     [self.settingsDialog setHidden:YES];
     //settings
     self.fileButton.hidden=YES;
@@ -824,7 +838,7 @@ static int j=0;
     [self.aboutImageinfo setHidden:NO];
       NSImage  *aboutImage=[NSImage imageNamed:@"about"];
     [self.aboutImageinfo setImage:aboutImage];
-  //  [self.view  addSubview:self.aboutImageinfo];
+    [self.view  addSubview:self.aboutImageinfo];
 }
 
 

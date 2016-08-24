@@ -136,6 +136,9 @@
             AppDelegate *delegate=[[NSApplication sharedApplication] delegate];
             [delegate.videoVC close];
         }
+        if (selectIndex<0) {
+            [MyCache  playPathClear];
+        }
         [self reloadPlayListData];
         [_tableView deselectAll:self];
     }

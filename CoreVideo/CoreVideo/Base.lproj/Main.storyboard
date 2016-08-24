@@ -943,7 +943,7 @@
                                             <matrix hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RG7-KP-tGt">
                                                 <rect key="frame" x="40" y="160" width="150" height="18"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <size key="cellSize" width="73" height="18"/>
+                                                <size key="cellSize" width="72" height="18"/>
                                                 <size key="intercellSpacing" width="4" height="4"/>
                                                 <buttonCell key="prototype" type="radio" title="radio" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="2vP-Wx-4yc">
                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -1059,6 +1059,9 @@
                         <outlet property="helpWebsite" destination="REJ-8r-SbS" id="0dX-lv-6GU"/>
                         <outlet property="navigateView" destination="GSq-1M-5wO" id="M0h-6o-Ear"/>
                         <outlet property="playButton" destination="tps-tk-M0x" id="X5U-13-vay"/>
+                        <outlet property="radioLanguage" destination="RG7-KP-tGt" id="88c-Wi-hG1"/>
+                        <outlet property="radioMap" destination="Ty2-2L-eTh" id="ieD-bt-XqO"/>
+                        <outlet property="radioSpeed" destination="g4E-L0-icS" id="uvY-u0-KXg"/>
                         <outlet property="settingsButton" destination="yde-FY-kGW" id="91d-7n-r4j"/>
                         <outlet property="settingsDialog" destination="0pv-g5-iJf" id="7B0-sF-hwY"/>
                         <outlet property="timeSlider" destination="1p1-68-45A" id="EBA-TS-AAm"/>
