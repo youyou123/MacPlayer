@@ -17,11 +17,12 @@
     NSMutableArray *currentVideoGpsDataArr;
     NSString       *currentPlayVideoPath;
     Float64         totalTime;
+
     BOOL  currentLocationChina;
-    
      NSInteger zoomState;//0 放大  1 缩小
     NSTextField *textField;
 }
+
 
 @end
 
@@ -33,6 +34,7 @@
         默认加载百度地图（中国内）YES--百度地图  NO－Google地图
      */
     currentLocationChina=YES;
+    isChina(YES);
     
     self.webview=[[WebView alloc] initWithFrame:self.view.bounds];
     
@@ -67,7 +69,7 @@
     [zoomInOut setTarget:self];
     [zoomInOut setAction:@selector(zoomInOut:)];
     
-    [zoomInOut setHidden:YES];
+   // [zoomInOut setHidden:YES];
 
     
     
@@ -83,11 +85,15 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowFullScreenChange:) name:notification_full_screen object:nil];
     
 }
+BOOL isChina (bool currentLocationChina){
+    return  currentLocationChina;
+}
 -(void)windowFullScreenChange:(NSNotification *)notification{
    
     [self reloadHtmlData];
     
 }
+
 -(void)dealloc{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:notification_full_screen object:nil];
 }
@@ -125,14 +131,20 @@
 }
 
 -(void)zoomInOut:(id)sender{
-  
-    [self reloadHtmlData];
-    zoomState=[self.zoomInOutDelegate zoomInMapWindow:zoomState];
+    if (currentLocationChina) {
+        currentLocationChina=NO;
+    }else{
+        currentLocationChina=YES;
+    }
+  //  [self reloadHtmlData];
+      [self loadMapHTMLData:currentLocationChina];
+    
+    //zoomState=[self.zoomInOutDelegate zoomInMapWindow:zoomState];
     NSLog(@"DEKDEKJHKF%s","xiiixxixi");
  
 }
 -(void)current:(id)sender{
- 
+    NSLog(@"CURRENT------------");
     if (currentLocationChina) {
         currentLocationChina=NO;
     }else{
@@ -146,6 +158,7 @@
 }
 
 -(void)reloadHtmlData{
+
     [self loadMapHTMLData:currentLocationChina];
 }
 

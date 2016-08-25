@@ -28,6 +28,7 @@ NSString *shopsite=@"http://www.nextbaseshop.co.uk";
     NSTableView *myTableView;
     NSScrollView * tableContainer;
     NSMutableArray   *helpList;
+      CVWebViewController     *webVC ;
   
 
 }
@@ -190,7 +191,7 @@ NSString *shopsite=@"http://www.nextbaseshop.co.uk";
  //  self.containerView.
     //[NSColor COLORwITHp]
   //  self.containerView.layer.backgroundColor=bannerColor;
-  self.voiceBtn.tag=1;
+    self.voiceBtn.tag=1;
     self.containerView.wantsLayer=YES;
     
     
@@ -200,8 +201,8 @@ NSString *shopsite=@"http://www.nextbaseshop.co.uk";
     CFRelease(keyUpEventTap);
     CFRunLoopAddSource(theRL, keyUpRunLoopSourceRef, kCFRunLoopDefaultMode);
     CFRelease(keyUpRunLoopSourceRef);
-    
-  
+
+//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowFullScreenChange:) name:notification_full_screen object:nil];
     
     
     
@@ -246,6 +247,7 @@ CGEventRef myCallBack(CGEventTapProxy proxy, CGEventType type, CGEventRef event,
     [self.gpsDelegate dataLogicProcessOfViodePath:url.absoluteString];
     [self.gpsInfoDelegate dataLogicProcessOfViodePath:url.absoluteString];
     [self.speedDelegate  dataLogicProcessOfViodePath:url.absoluteString];
+  
     
     
     self.isAddVideoFile=YES;
@@ -792,7 +794,7 @@ static int j=0;
 
     AppDelegate *delegate=[[NSApplication sharedApplication] delegate];
     [delegate openFile:sender];
-   
+ 
 
 }
 
@@ -865,9 +867,21 @@ static int j=0;
 
 - (IBAction)mapRadio:(NSMatrix *)sender {
     if(sender.selectedColumn==0){
+        NSLog(@"0000000000000000000000000");
+        AppDelegate *delegate=[[NSApplication sharedApplication] delegate];
+        //  webVC      =[[NSStoryboard storyboardWithName:@"Main" bundle:nil] instantiateControllerWithIdentifier:@"webVC"];
+        [delegate.webVC  loadMapHTMLData:NO];
         
-    }else{
+      
+        
+       }else{
+         NSLog(@"1111111111111111111111111111");
+        AppDelegate *delegate=[[NSApplication sharedApplication] delegate];
+        
+        [delegate.webVC  loadMapHTMLData:YES];
+    
         
     }
 }
+
 @end

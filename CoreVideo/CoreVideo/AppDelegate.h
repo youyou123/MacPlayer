@@ -11,6 +11,7 @@
 #import "VideoViewController.h"
 #import "CVWindowController.h"
 #import "PlayListViewController.h"
+#import "CVWebViewController.h"
 
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
@@ -18,6 +19,7 @@
 @property(nonatomic,strong) VideoViewController *videoVC;
 @property(nonatomic,strong) CVWindowController  *windowVC;
 @property(nonatomic,strong) PlayListViewController  *playlistVC;
+@property(nonatomic,strong) CVWebViewController  *webVC;
 
 - (IBAction)openFile:(id)sender;
 

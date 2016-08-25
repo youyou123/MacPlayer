@@ -16,6 +16,7 @@
 @property(nonatomic,strong) WebView *webview;
 @property(nonatomic,weak) id<CVModuleProtocol> distanceDelegate;
 @property(nonatomic,weak) id<CVModuleProtocol> zoomInOutDelegate;
-
+//@property(nonatomic,weak) id<CVModuleProtocol> ;
 -(void)reloadHtmlData;
+-(void)loadMapHTMLData:(BOOL)locationInChina;
 @end

@@ -105,9 +105,9 @@
     [self.playListView addSubview:playlistVC.view];
     [self.mapInfoView addSubview:webVC.view];//gps
     [self.displayView addSubview:displayVC.view];
-    //  [self.gmapWebView addSubview:webVC.view];
+   // [self.gmapWebView addSubview:webVC.view];
     // self.displayView.hidden=YES;
-    self.gmapWebView.hidden=YES;
+     self.gmapWebView.hidden=YES;
     
     
     
@@ -134,6 +134,7 @@
     
     
 }
+
 -(NSString *)currentSplitView:(NSSplitView *)splitview{
     if(splitview==_globalSplitView){
         return @"_globalSplitView";

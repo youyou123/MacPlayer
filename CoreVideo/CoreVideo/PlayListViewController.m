@@ -47,6 +47,7 @@
 //spd
 @property (weak) IBOutlet NSImageView *spdArrowChange;
 @property (weak) IBOutlet NSTextField *spdshow;
+@property (weak) IBOutlet NSImageView *spdImage;
 
 //spd
 
@@ -314,14 +315,18 @@
                 
                 if ([spdSouce rangeOfString:@"KM/H"].location == NSNotFound) {
                     NSString *spdString = [spdSouce stringByReplacingOccurrencesOfString:@"MPH" withString:@""];//字符串替换
-                    [self  rotateSpd:[spdString floatValue]/150*M_PI];
-                    
+                    [self  rotateSpd:[spdString floatValue]/95*M_PI];
+                    NSLog(@"---------------------------mph-");
+                    [ self.spdImage  setImage:[NSImage imageNamed:@"spdimage"]];
+                    [self.spdArrowChange setImage:[NSImage imageNamed:@"spdarrow"]];
                     
                 }
                 if ([spdSouce rangeOfString:@"MPH"].location == NSNotFound) {
                     NSString *spdString = [spdSouce stringByReplacingOccurrencesOfString:@"KM/H" withString:@""];//字符串替换
                     [self  rotateSpd:[spdString floatValue]/150*M_PI];
-                    //  NSLog(@"MPH/////////////////////////MPH:%@",spdString);
+                         NSLog(@"----------------/////-----------kmh-");
+                    [ self.spdImage  setImage:[NSImage imageNamed:@"speedbackset"]];
+                        [self.spdArrowChange setImage:[NSImage imageNamed:@"3"]];
                 }
                 
                 
