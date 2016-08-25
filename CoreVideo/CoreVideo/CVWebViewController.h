@@ -19,4 +19,5 @@
 //@property(nonatomic,weak) id<CVModuleProtocol> ;
 -(void)reloadHtmlData;
 -(void)loadMapHTMLData:(BOOL)locationInChina;
+BOOL isChina (bool currentLocationChina);
 @end

@@ -873,7 +873,8 @@ static int j=0;
         [delegate.webVC  loadMapHTMLData:NO];
         
       
-        
+    
+
        }else{
          NSLog(@"1111111111111111111111111111");
         AppDelegate *delegate=[[NSApplication sharedApplication] delegate];
